@@ -20,8 +20,7 @@
  *   5, 5  => 25
  */
 function getRectangleArea(width, height) {
-  const area = width * height;
-  return area;
+  return width * height;
 }
 
 
@@ -92,9 +91,7 @@ function getDistanceBetweenPoints(x1, y1, x2, y2) {
  *   5*x = 0         => 0
  */
 function getLinearEquationRoot(a, b) {
-  const x = (-b) / a;
-  // throw new Error('Not implemented');
-  return x;
+  return (-b) / a;
 }
 
 
@@ -116,8 +113,12 @@ function getLinearEquationRoot(a, b) {
  *   (0,1) (0,1)     => 0
  *   (0,1) (1,2)     => 0
  */
-function getAngleBetweenVectors(/* x1, y1, x2, y2 */) {
-  throw new Error('Not implemented');
+function getAngleBetweenVectors(x1, y1, x2, y2) {
+  const multiply = x1 * x2 + y1 * y2;
+  const absX1 = Math.sqrt((x1 ** 2) + (y1 ** 2));
+  const absX2 = Math.sqrt((x2 ** 2) + (y2 ** 2));
+  const angle = (multiply / (absX1 * absX2)) * (3.14 / 180);
+  return angle;
 }
 
 /**
@@ -191,8 +192,8 @@ function getParallelepipedDiagonal(a, b, c) {
  *   1678, 2  => 1700
  *   1678, 3  => 2000
  */
-function roundToPowerOfTen(/* num, pow */) {
-  throw new Error('Not implemented');
+function roundToPowerOfTen(num, pow) {
+  return Math.round(num / (10 ** pow)) * (10 ** pow);
 }
 
 /**
@@ -212,8 +213,19 @@ function roundToPowerOfTen(/* num, pow */) {
  *   16 => false
  *   17 => true
  */
-function isPrime(/* n */) {
-  throw new Error('Not implemented');
+function isPrime(n) {
+  let bool = true;
+  let i = 2;
+  if (n === 1 || n === 2) {
+    bool = true;
+  }
+  while (i < n) {
+    if (n % i === 0) {
+      bool = false;
+    }
+    i += 1;
+  }
+  return bool;
 }
 
 /**
@@ -231,8 +243,14 @@ function isPrime(/* n */) {
  *   toNumber(42, 0) => 42
  *   toNumber(new Number(42), 0) => 42
  */
-function toNumber(/* value, def */) {
-  throw new Error('Not implemented');
+function toNumber(value, def) {
+  let res = 0;
+  if (Number.isNaN(Number(value))) {
+    res = def;
+  } else {
+    res = Number(value);
+  }
+  return res;
 }
 
 module.exports = {
