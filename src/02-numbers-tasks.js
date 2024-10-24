@@ -54,8 +54,13 @@ function getCircleCircumference(radius) {
  *  -3, 3  => 0
  */
 function getAverage(value1, value2) {
-  // throw new Error('Not implemented');
-  const average = (value1 + value2) / 2;
+  const sum = value1 + value2;
+  let average = 0;
+  if (!Number.isFinite(sum)) {
+    average = (value1 / 2) + (value2 / 2);
+  } else {
+    average = sum / 2;
+  }
   return average;
 }
 
