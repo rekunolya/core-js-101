@@ -36,8 +36,7 @@ function getRectangleArea(width, height) {
  *   0    => 0
  */
 function getCircleCircumference(radius) {
-  // throw new Error('Not implemented');
-  const circumference = 2 * 3.1415926535897932 * radius;
+  const circumference = 2 * Math.PI * radius;
   return circumference;
 }
 
@@ -141,8 +140,7 @@ function getAngleBetweenVectors(x1, x2, y1, y2) {
  *     0     => 0
  */
 function getLastDigit(value) {
-  const res = String(value).split('');
-  return res[res.length - 1];
+  return Math.abs(value % 10);
 }
 
 
