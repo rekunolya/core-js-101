@@ -19,7 +19,7 @@
  *   '',  'bb'  => 'bb'
  */
 function concatenateStrings(value1, value2) {
-  const string = value1 + value2;
+  const string = value1.concat(value2);
   return string;
 }
 
@@ -85,8 +85,7 @@ function extractNameFromTemplate(value) {
  *   'cat'       => 'c'
  */
 function getFirstChar(value) {
-  const firstChar = value[0];
-  return firstChar;
+  return value.charAt(0);
 }
 
 /**
@@ -117,11 +116,10 @@ function removeLeadingAndTrailingWhitespaces(value) {
  *   'cat', 3 => 'catcatcat'
  */
 function repeatString(value, count) {
-  let string = '';
-  for (let i = 0; i < count; i += 1) {
-    string += value;
+  if (count > 0) {
+    return value.repeat(count);
   }
-  return string;
+  return '';
 }
 
 /**
